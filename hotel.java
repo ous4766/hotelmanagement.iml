@@ -32,7 +32,7 @@ public class hotel {
 
     public static void menu(){
 
-        // Display the main menu of the Hotel Management System on the console
+        // Display the main menu of the Hotel System on the console
         System.out.println("======================================================");
         System.out.println("*            Hotel Management System                 *");
         System.out.println("======================================================");
