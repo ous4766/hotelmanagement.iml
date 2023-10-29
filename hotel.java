@@ -7,6 +7,7 @@ public class hotel {
     //Created static variables including the array and scanner,
     // so it can be used in all the static methods without being declared again
     static String choice;
+
     static String answer;
     static String customerName;
     static int roomNumber = 0;
@@ -31,6 +32,7 @@ public class hotel {
 
     public static void menu(){
 
+        // Display the main menu of the Hotel Management System
         System.out.println("======================================================");
         System.out.println("*            Hotel Management System                 *");
         System.out.println("======================================================");
@@ -46,6 +48,7 @@ public class hotel {
         System.out.println("======================================================");
         System.out.println("");
 
+        // Prompt the user to choose an option from the menu
         System.out.println("Choose one of the options from above. (E.g: Type 'V' to view all the rooms)");
 
         do {
@@ -89,7 +92,7 @@ public class hotel {
                 break;
 
                 case "q":
-                System.out.println("Thanks");
+                    System.out.println("Thanks");
                 break;
 
                 default:
@@ -120,6 +123,7 @@ public class hotel {
         System.out.println("");
         menu();
     }
+
 
     private static void addCustomer() {
 
@@ -280,7 +284,7 @@ public class hotel {
 
         //copy hotel array data to names array
         for (int x = 0; x < 10; x++) {
-            names[x] = hotel[x].toLowerCase();//used this to avoid case sensitive issues.
+            names[x] = hotel[x].toLowerCase();//used this to avoid casec sensitive issues.
         }
 
         //used Bubble sort
