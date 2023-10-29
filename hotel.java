@@ -136,43 +136,43 @@ public class hotel {
                 System.out.println("Enter room number (0-9)");
                 roomNumber = input.nextInt();
 
-                //if the room is already occupied this message will get printed
+                //If the room is already occupied this message will get printed
                 if (!(hotel[roomNumber].equals("e"))) {
                     invalidRoomNumber = true;
                     System.out.println("This room is occupied by: Mr. " + hotel[roomNumber]);
                     System.out.println("");
 
-                    //if the room is empty and the input value is within the range it accepts the input
+                    //If the room is empty and the input value is within the range it accepts the input
                 } else if (roomNumber >= 0 && roomNumber < 10) {
                     invalidRoomNumber = false;
 
-                    //if the input exceeds the range then this error message will be displayed
+                    //If the input exceeds the range then this error message will be displayed
                 } else {
                     invalidRoomNumber = true;
                     System.out.println("Invalid input! Please Enter a value between 0-9");
                     System.out.println("");
                 }
 
-                //if the input is not an integer value then this will catch it
+                //If the input is not an integer value then this will catch it
             } catch (InputMismatchException e) {
                 invalidRoomNumber = true;
                 System.out.println("Invalid input! Please Enter a value between 0-9");
                 System.out.println("");
                 input.next();
 
-                //if the input is out of the range of the hotel array this will catch it
+                //If the input is out of the range of the hotel array this will catch it
             } catch (IndexOutOfBoundsException e) {
                 invalidRoomNumber = true;
                 System.out.println("Invalid input! Please Enter a value between 0-9");
                 System.out.println("");
                 input.next();
             }
-        } while (invalidRoomNumber);//these steps will follow if all of the above is valid
+        } while (invalidRoomNumber);//These steps will follow if all of the above is valid
         System.out.println("Enter the name of the customer :"); /*+ roomNumber +*/
         customerName = input.next();
         hotel[roomNumber] = customerName;
 
-        //this will let you choose whether to add more data or not
+        //This will let you choose whether to add more data or not
         do {
             System.out.println("Do you want to continue adding records?(Y/N)");
             answer = input.next();
@@ -198,7 +198,7 @@ public class hotel {
 
     private static void displayEmptyRooms() {
 
-        //this method will display all the empty rooms
+        //This method will display all the empty rooms
         for (int x = 0; x < 10; x++) {
             if (hotel[x].equals("e")) {
                 System.out.println("room " + x + " is empty");
@@ -217,26 +217,26 @@ public class hotel {
                 System.out.println("please enter the Room's number which you want to vacate");
                 roomNumber = input.nextInt();
 
-                //if the hotel room is not empty then this will delete the customer from that room
+                //If the hotel room is not empty then this will delete the customer from that room
                 if (!(hotel[roomNumber].equals("e"))) {
                     invalidInput = false;
                     hotel[roomNumber] = "e";
 
-                    //if the room is already empty this message will be displayed
+                    //If the room is already empty this message will be displayed
                 } else {
                     invalidInput = true;
                     System.out.println("Room " + roomNumber + " is already Empty");
                     System.out.println("");
                 }
 
-                //if the input is not an integer value then this will catch it
+                //If the input is not an integer value then this will catch it
             } catch (InputMismatchException e) {
                 invalidInput = true;
                 System.out.println("Invalid input! Please Enter a value between 0-9");
                 System.out.println("");
                 input.next();
 
-                //if the input is out of the range of the hotel array this will catch it
+                //If the input is out of the range of the hotel array this will catch it
             } catch (IndexOutOfBoundsException e) {
                 invalidInput = true;
                 System.out.println("Invalid room number. Please enter a value between 0-9");
@@ -258,8 +258,8 @@ public class hotel {
 
 
         for (int n = 0; n < 10; n++) {
-            //used equalsIgnoreCase to avoid case sensitive issues while searching for a customer
-            //this method will find the room's number which is currently being occupied by the mentioned customer
+            //Used equalsIgnoreCase to avoid case-sensitive issues while searching for a customer
+            //This method will find the room's number which is currently being occupied by the mentioned customer
             if (hotel[n].equalsIgnoreCase(find)) {
                 found = true;
                 System.out.println("Mr. " + find + " is staying in room No. " + n);
@@ -268,7 +268,7 @@ public class hotel {
             }
         }
 
-        //this will let ou know if the customer is not there in the database
+        //This will let ou know if the customer is not there in the database
         if (found == false) {
             System.out.println(find + " doesn't exist on our database");
             System.out.println("");
@@ -282,7 +282,7 @@ public class hotel {
         int index = 0;
         String[] names = new String[10];
 
-        //copy hotel array data to names array
+        //Copy hotel array data to names array
         for (int x = 0; x < 10; x++) {
             names[x] = hotel[x].toLowerCase();//used this to avoid casec sensitive issues.
         }
@@ -317,16 +317,16 @@ public class hotel {
     private static void storeData() {
 
         try {
-            //saving Data and overwriting
+            //Saving Data and overwriting
             BufferedWriter bw = new BufferedWriter(new FileWriter("data.txt", false));
             for (int x = 0; x < hotel.length; x++) {
                 String file;
                 file = hotel[x];
-                // writes Empty room if it find "e" on the array
+                // Writes Empty room if it finds "e" on the array
                 if (file.equals("e")) {
                     bw.write("Empty Room " + x);
 
-                    // writes the name of the customer from the array
+                    // Writes the name of the customer from the array
                 } else {
                     bw.write(file);
                 }
@@ -335,12 +335,12 @@ public class hotel {
 
             }
 
-            //will catch this exception if the Text file is not found
+            //Will catch this exception if the Text file is not found
         } catch (IOException e) {
             System.err.println("File not found!");
         }
 
-        //message to show the user that the array data has been saved to a Text file successfully
+        //Message to show the user that the array data has been saved to a Text file successfully
         System.out.println("Data successfully saved!");
         System.out.println("");
         menu();
@@ -350,7 +350,7 @@ public class hotel {
     private static void retrieveData() {
 
         try {
-            //reading Data from the Text File
+            //Reading Data from the Text File
             BufferedReader reader = new BufferedReader(new FileReader("data.txt"));
 
             for (int x = 0; x < hotel.length; x++) {
