@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class hotel {
 
     //Created static variables including the array and scanner,
-    // so it can be used in all the static methods without being declared again
+    // So it can be used in all the static methods without being declared again
     static String choice;
 
     static String answer;
@@ -21,10 +21,10 @@ public class hotel {
 
     }
 
-    private static void initialize(String hotelRef[]) {
+    private static void initialize(String[] hotelRef) {
 
         //Hotel array will only have Null characters at the beginning.
-        //Assigning a String value of "e" to all of it's elements.
+        //Assigning a String value of "e" to all of its elements.
         for (int x = 0; x < 10; x++) {
             hotelRef[x] = "e";
         }
@@ -55,7 +55,7 @@ public class hotel {
             System.out.println();
             System.out.print("Choice : ");
             choice = input.next();
-            String selection = choice.toLowerCase(); //This will convert the input value to lowercase. this will help avoid case sensitive issues.
+            String selection = choice.toLowerCase(); //This will convert the input value to lowercase. this will help avoid case-sensitive issues.
 
             switch (selection) {
 
