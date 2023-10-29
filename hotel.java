@@ -127,7 +127,7 @@ public class hotel {
 
     private static void addCustomer() {
 
-        boolean invalidRoomNumber;//declaring a boolean value so it is easier to break or catch data from a loop
+        boolean invalidRoomNumber;//declaring a boolean value, so it is easier to break or catch data from a loop
 
         do {
             invalidRoomNumber = false;
